@@ -13,8 +13,8 @@ public class Sabrina07239_PetugasModel implements Sabrina07239_ModeIinterfaces{
     @Override
     public int cekData(String id, String nama){
         int loop = 0;
-        for(Sabrina07239_PetugasEntity aslabEntity : PetugasEntityArrayList){
-            if(aslabEntity.getId().equals(id) && aslabEntity.getnama().equals(nama)){
+        for(Sabrina07239_PetugasEntity petugasEntity : PetugasEntityArrayList){
+            if(petugasEntity.getId().equals(id) && petugasEntity.getnama().equals(nama)){
             break;
             }else{
                 loop++;

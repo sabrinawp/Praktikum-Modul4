@@ -11,6 +11,8 @@ public Sabrina07239_RentalCamera(String id,String nama, String alamat, String no
     this.noIdentitas=noIdentitas;
     this.notelp=notelp;
 }
+    public Sabrina07239_RentalCamera(){
+    }
     public String getId() {
         return id;
     }

@@ -17,8 +17,8 @@ public class Sabrina07239_PetugasController implements Sabrina07239_ControllerIn
         String noIdentitas [] = {"01","02","03"};
         String notelp [] = {"01","02","03"};
               for(int i=0;i<id.length;i++){
-                Sabrina07239_AllObjectModel.petugasModel.insertPetugas(new Sabrina07239_PetugasEntity(id[i],nama[i],alamat[i],
-                noIdentitas[i],notelp[i]));
+                Sabrina07239_AllObjectModel.petugasModel.insertPetugas(new Sabrina07239_PetugasEntity(id[i],
+                        nama[i],alamat[i],noIdentitas[i],notelp[i]));
             }
     }
     
@@ -32,7 +32,8 @@ public class Sabrina07239_PetugasController implements Sabrina07239_ControllerIn
     }
     
     public void updateIsVerified(int index,int indexCamera,Sabrina07239_PelangganEntity pelanggan ) {
-        Sabrina07239_AllObjectModel.daftarPelangganmodel.updateIsVerified(index, new Sabrina07239_DaftarPelangganEntity(indexCamera, pelanggan,true));
+        Sabrina07239_AllObjectModel.daftarPelangganmodel.updateIsVerified(index, new 
+        Sabrina07239_DaftarPelangganEntity(indexCamera, pelanggan,true));
     }
     
     public ArrayList<Sabrina07239_DaftarPelangganEntity> cekDaftarPelangganModel() {

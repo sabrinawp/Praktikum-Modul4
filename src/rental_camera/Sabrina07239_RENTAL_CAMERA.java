@@ -5,6 +5,7 @@ import Model.Sabrina07239_DaftarPelangganModel;
 import Controller.Sabrina07239_PetugasController;
 import Controller.Sabrina07239_AllObjectModel;
 import Controller.Sabrina07239_PelangganController;
+import View.Sabrina07239_GUI;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner; 
@@ -16,7 +17,33 @@ public class Sabrina07239_RENTAL_CAMERA {
 
     public static void main(String[] args) { 
         Sabrina07239_RENTAL_CAMERA data = new Sabrina07239_RENTAL_CAMERA();
-        data.viewMenu(); 
+        data.view(); 
+    }
+    
+    void view(){
+    do {
+            int pilih;
+            System.out.println("Menu\n" +
+                    "1. Console\n" +
+                    "2. GUI\n" +
+                    "Masukkan Pilihan Anda : ");
+            pilih = input.nextInt();
+
+            switch (pilih){
+                case 1:
+                    viewMenu();
+                    break;
+                case 2:
+                    GUI();
+                    break;
+                default:
+                    break;
+            }
+        }while (true);
+    }
+    
+    void GUI(){
+        Sabrina07239_GUI gui = new Sabrina07239_GUI();
     }
     
     void viewMenu(){
@@ -118,9 +145,10 @@ public class Sabrina07239_RENTAL_CAMERA {
         String id = input.next();
         System.out.print("Nama : ");
         String nama = input.next();
+        try {
         pelangganModel.login(id, nama);
-        System.out.println("Selamat datang "+pelangganModel.pelangganEntity().getnama());
-        int cekpelanggan = pelangganModel.cekDaftarPelanggan(pelangganModel.pelangganEntity().getId());
+        System.out.println("Selamat datang "+pelangganModel.getData().getnama());
+        int cekpelanggan = pelangganModel.cekDaftarPelanggan(pelangganModel.getData().getId());
         if (cekpelanggan == -1){
             System.out.println("Anda belum memilih kamera");
                 registerPelanggan();
@@ -134,8 +162,16 @@ public class Sabrina07239_RENTAL_CAMERA {
         System.out.println("No telp = "+pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getnotelp());
         System.out.println("camera = "+Sabrina07239_CameraEntity.merk[pelangganModel.showDaftarPelanggan(cekpelanggan).getIndexCamera()]);
         System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_sewa()));
-        System.out.println("Tgl sewa           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
-        System.out.println("isVerified = "+pelangganModel.showDaftarPelanggan(cekpelanggan).isIsVerified());
+        System.out.println("Tgl kembali           : "+new SimpleDateFormat(" dd - MM - yyyy").format(pelangganModel.showDaftarPelanggan(cekpelanggan).getPelanggan().getTgl_kembali()));
+        System.out.println("isVerified = ");
+         if (pelangganModel.showDaftarPelanggan(cekpelanggan).isIsVerified() == false) {
+                System.out.print("Belum Di Verifikasi petugas\n");
+            } else {
+                System.out.print("Telah Di Verifikasi petugas\n");
+            }
+        
+        }} catch (Exception e) {
+            System.out.println("id atau nama Anda Salah !!!");
         }
     }
         
@@ -155,7 +191,7 @@ public class Sabrina07239_RENTAL_CAMERA {
                 updateIsVerified();
             }
         } catch (Exception e) {
-            System.out.println("ID atau Nama Salah !!!");
+            System.out.println("id atau nama Anda Salah !!!");
         }
     }
         

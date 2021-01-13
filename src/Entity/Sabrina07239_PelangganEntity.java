@@ -8,9 +8,15 @@ public class Sabrina07239_PelangganEntity extends Sabrina07239_RentalCamera {
         this.tgl_sewa=tgl_sewa;
         this.tgl_kembali=tgl_kembali;
 }
+
+    public Sabrina07239_PelangganEntity() {
+    }
  @Override   
     public String getId() {
         return id;
+    }
+    public void setid(String id) {
+        this.id = id;
     }
 
     public Date getTgl_sewa() {

@@ -20,7 +20,7 @@ public class Sabrina07239_DaftarPelangganModel implements Sabrina07239_ModeIinte
     public int cekData(String id, String nama){
         int loop = 0;
         if(daftarpelangganArrayList.size() ==0){
-            loop = -1;
+            loop = -1;//data kosong
         }else{
             for(int i = 0; i <daftarpelangganArrayList.size(); i++){
             if(daftarpelangganArrayList.get(i).getPelanggan().getId().equals(id)){
@@ -40,5 +40,8 @@ public class Sabrina07239_DaftarPelangganModel implements Sabrina07239_ModeIinte
     }
     public void updateIsVerified(int index,Sabrina07239_DaftarPelangganEntity daftarpelanggan){
     daftarpelangganArrayList.set(index, daftarpelanggan);
+    }
+    public ArrayList <Sabrina07239_DaftarPelangganEntity> alldatapelanggan(){
+        return  daftarpelangganArrayList;
     }
 }
