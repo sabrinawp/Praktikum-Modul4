@@ -20,7 +20,7 @@ public class Sabrina07239_PetugasGUI {
      public Sabrina07239_PetugasGUI(){
         petugas.setSize(650,500);
         petugas.setLayout(null);
-        petugas.getContentPane().setBackground(Color.RED);
+        petugas.getContentPane().setBackground(Color.CYAN);
         
         admin = new JLabel("Petugas");
         admin.setBounds(250, 30, 200, 30);

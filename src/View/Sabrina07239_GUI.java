@@ -20,7 +20,7 @@ public class Sabrina07239_GUI {
     public Sabrina07239_GUI(){ //komponen
         TampilanAwal.setSize(700, 630); //ukuran 
         TampilanAwal.setLayout(null);
-        TampilanAwal.getContentPane().setBackground(Color.RED); //warna background
+        TampilanAwal.getContentPane().setBackground(Color.CYAN); //warna background
         
         top = new JLabel("====RENTAL CAMERA====");
         top.setBounds(50, 10, 600, 50); 
@@ -101,14 +101,14 @@ public class Sabrina07239_GUI {
         textnotelp.setBounds(400, 420, 200, 30);
         TampilanAwal.add(textnotelp);
         
-        labeltglsewa = new JLabel("Tanggal sewa (dd/mm/yyyy)");
+        labeltglsewa = new JLabel("Tanggal sewa (mm/dd/yyyy)");
         labeltglsewa.setBounds(400, 450, 200, 30);
         TampilanAwal.add(labeltglsewa);
         texttglsewa = new JTextField();
         texttglsewa.setBounds(400, 480, 200, 30);
         TampilanAwal.add(texttglsewa);
         
-        labeltglkembali = new JLabel("Tanggal kembali (dd/mm/yyyy)");
+        labeltglkembali = new JLabel("Tanggal kembali (mm/dd/yyyy)");
         labeltglkembali.setBounds(400, 510, 200, 30);
         TampilanAwal.add(labeltglkembali);
         texttglkembali = new JTextField();

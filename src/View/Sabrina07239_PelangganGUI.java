@@ -19,7 +19,7 @@ public class Sabrina07239_PelangganGUI {
     public Sabrina07239_PelangganGUI(){
         Pelanggan.setSize(720, 600);
         Pelanggan.setLayout(null);
-        Pelanggan.getContentPane().setBackground(Color.RED);
+        Pelanggan.getContentPane().setBackground(Color.CYAN);
         
         datadiri = new JLabel("Data Pelanggan");
         datadiri.setFont(new Font("Timer New Roman",Font.BOLD,30));
