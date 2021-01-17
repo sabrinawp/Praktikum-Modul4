@@ -1,53 +1,45 @@
 package View;
 
 import Entity.Sabrina07239_CameraEntity;
+import Entity.Sabrina07239_DaftarPelangganEntity;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
-public class Sabrina07239_PelangganGUI {
-    JFrame Pelanggan = new JFrame();
-    JButton back,daftarbtn;
-    JTextArea area = new JTextArea();
-    JLabel datadiri,daftarcamera;
-    JComboBox pilcamera = new JComboBox(Sabrina07239_CameraEntity.merk);
+public class Sabrina07239_PelangganGUI extends Sabrina07239_KomponenGUI{
     int cek = Sabrina07239_Allobjctrl.Pelanggan.cekDaftarPelanggan
         (Sabrina07239_Allobjctrl.Pelanggan.getData().getId());
     
     public Sabrina07239_PelangganGUI(){
-        Pelanggan.setSize(720, 600);
-        Pelanggan.setLayout(null);
-        Pelanggan.getContentPane().setBackground(Color.CYAN);
+        setSize(800, 700);
+        setLayout(null);
+        setVisible(true);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        getContentPane().setBackground(Color.CYAN);
         
-        datadiri = new JLabel("Data Pelanggan");
-        datadiri.setFont(new Font("Timer New Roman",Font.BOLD,30));
-        datadiri.setBounds(90, 30, 200, 30);
-        Pelanggan.add(datadiri);
+        datadiri.setFont(font);
+        datadiri.setBounds(30, 40, 400, 40);
+        add(datadiri);
         area.setBounds(30, 90, 400, 300);
-        Pelanggan.add(area);
+        add(area);
         
-        daftarcamera = new JLabel("Daftar Camera");
-        daftarcamera.setBounds(450, 30, 250, 30);
-        daftarcamera.setFont(new Font("Times New Roman",Font.BOLD,30));
-        Pelanggan.add(daftarcamera);
+        daftarcamera.setBounds(450, 40, 400, 40);
+        daftarcamera.setFont(font);
+        add(daftarcamera);
         pilcamera.setBounds(450, 90, 230, 30);
-        Pelanggan.add(pilcamera);
+        add(pilcamera);
         
-        daftarbtn = new JButton("Daftar");
         daftarbtn.setBounds(500, 200, 100, 30);
         daftarbtn.setBackground(Color.GRAY);
-        Pelanggan.add(daftarbtn);
+        add(daftarbtn);
         
-        back = new JButton("Back");
         back.setBounds(30, 500, 100, 30);
         back.setBackground(Color.GRAY);
-        Pelanggan.add(back);
+        add(back);
         
-        Pelanggan.setVisible(true);
-        Pelanggan.setLocationRelativeTo(null);
-        Pelanggan.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         if(cek==-1){ //cek data, apabila kita belum daftar untuk kameranya
             JOptionPane.showMessageDialog(null, "Anda Belum Daftar Camera", "Information", JOptionPane.INFORMATION_MESSAGE);        
         }else if(cek==-2){
@@ -68,7 +60,7 @@ public class Sabrina07239_PelangganGUI {
         back.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){
-                Pelanggan.dispose();
+                dispose();
                 Sabrina07239_GUI men = new Sabrina07239_GUI(); //nama objek menu
             }
         });

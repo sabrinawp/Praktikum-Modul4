@@ -1,127 +1,92 @@
 package View;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import javax.swing.*;
-public class Sabrina07239_GUI {
-    JFrame TampilanAwal = new JFrame();//tampilan awal
-    JLabel login,daftar,top; 
-    JRadioButton radioPetugas,radiopelanggan; //tombol pilihan
-    JTextField textidlogin,textnamalogin,textalamat,textnoidentitas,textnotelp,texttglsewa,
-                texttglkembali,textiddaftar,textnamadaftar;
-    JLabel labelidlogin,labelnamalogin,labelalamat,labelnoidentitas,labelnotelp,labeltglsewa,
-            labeltglkembali,labeliddaftar,labelnamadaftar;
-    JButton check,reg; //tombol
-    
+public class Sabrina07239_GUI extends Sabrina07239_KomponenGUI{
     private boolean ceklogin = false;
     public Sabrina07239_GUI(){ //komponen
-        TampilanAwal.setSize(700, 630); //ukuran 
-        TampilanAwal.setLayout(null);
-        TampilanAwal.getContentPane().setBackground(Color.CYAN); //warna background
+        setSize(700, 700); //ukuran 
+        setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setLocationRelativeTo(null);
+        getContentPane().setBackground(Color.CYAN); //warna background
         
-        top = new JLabel("====RENTAL CAMERA====");
-        top.setBounds(50, 10, 600, 50); 
-        top.setFont(new Font("Times New Roman",Font.BOLD,40));
-        TampilanAwal.add(top);
+        judulGui.setBounds(150, 10, 600, 50); 
+        judulGui.setFont(font);
+        add(judulGui);
         
-        login = new JLabel("Login");
-        login.setBounds(100, 50, 100, 100);
-        login.setFont(new Font("Times New Roman",Font.BOLD,30));
-        TampilanAwal.add(login);
+        labellogin.setBounds(100, 50, 100, 100);
+        labellogin.setFont(font);
+        add(labellogin);
         
-        radioPetugas = new JRadioButton("Petugas");
         radioPetugas.setBounds(30, 150, 100, 30);
         radioPetugas.setBackground(Color.GRAY);
-        TampilanAwal.add(radioPetugas);
+        add(radioPetugas);
         
-        radiopelanggan = new JRadioButton("Pelanggan");
         radiopelanggan.setBounds(140, 150, 100, 30);
         radiopelanggan.setBackground(Color.GRAY);
-        TampilanAwal.add(radiopelanggan);
+        add(radiopelanggan);
         
-        labelidlogin = new JLabel("Id");
         labelidlogin.setBounds(30, 180, 30, 30);
-        TampilanAwal.add(labelidlogin);
-        textidlogin = new JTextField();
+        add(labelidlogin);   
         textidlogin.setBounds(30, 210, 200, 30);
-        TampilanAwal.add(textidlogin);
+        add(textidlogin);
         
-        labelnamalogin = new JLabel("Nama");
         labelnamalogin.setBounds(30, 240, 100, 30);
-        TampilanAwal.add(labelnamalogin);
-        textnamalogin = new JTextField();
+        add(labelnamalogin);
         textnamalogin.setBounds(30, 270, 200, 30);
-        TampilanAwal.add(textnamalogin);
+        add(textnamalogin);
         
-        check = new JButton("Check");
-        check.setBounds(90, 320, 100, 40);
-        check.setBackground(Color.GRAY);
-        TampilanAwal.add(check);
+        btnlogin.setBounds(90, 320, 100, 40);
+        btnlogin.setBackground(Color.GRAY);
+        add(btnlogin);
         
-        daftar = new JLabel("Daftar");
-        daftar.setFont(new Font("Times New Roman",Font.BOLD,30));
+        daftar.setFont(font);
         daftar.setBounds(440, 50, 150, 100);
-        TampilanAwal.add(daftar);
+        add(daftar);
         
-        labeliddaftar = new JLabel("Id");
         labeliddaftar.setBounds(400, 150, 30, 30);
-        TampilanAwal.add(labeliddaftar);
-        textiddaftar = new JTextField();
+        add(labeliddaftar);
         textiddaftar.setBounds(400, 180, 200, 30);
-        TampilanAwal.add(textiddaftar);
+        add(textiddaftar);
         
-        labelnamadaftar = new JLabel("Nama");
         labelnamadaftar.setBounds(400, 210, 100, 30);
-        TampilanAwal.add(labelnamadaftar);
-        textnamadaftar = new JTextField();
+        add(labelnamadaftar);
         textnamadaftar.setBounds(400, 240, 200, 30);
-        TampilanAwal.add(textnamadaftar);
+        add(textnamadaftar);
         
-        labelalamat = new JLabel("Alamat");
         labelalamat.setBounds(400, 270, 100, 30);
-        TampilanAwal.add(labelalamat);
-        textalamat = new JTextField();
+        add(labelalamat);
         textalamat.setBounds(400, 300, 200, 30);
-        TampilanAwal.add(textalamat);
+        add(textalamat);
         
-        labelnoidentitas = new JLabel("No Identitas");
         labelnoidentitas.setBounds(400, 330, 100, 30);
-        TampilanAwal.add(labelnoidentitas);
-        textnoidentitas = new JTextField();
+        add(labelnoidentitas);
         textnoidentitas.setBounds(400, 360, 200, 30);
-        TampilanAwal.add(textnoidentitas);
+        add(textnoidentitas);
         
-        labelnotelp = new JLabel("No Telepon");
         labelnotelp.setBounds(400, 390, 200, 30);
-        TampilanAwal.add(labelnotelp);
-        textnotelp = new JTextField();
+        add(labelnotelp);
         textnotelp.setBounds(400, 420, 200, 30);
-        TampilanAwal.add(textnotelp);
+        add(textnotelp);
         
-        labeltglsewa = new JLabel("Tanggal sewa (mm/dd/yyyy)");
         labeltglsewa.setBounds(400, 450, 200, 30);
-        TampilanAwal.add(labeltglsewa);
-        texttglsewa = new JTextField();
+        add(labeltglsewa);
         texttglsewa.setBounds(400, 480, 200, 30);
-        TampilanAwal.add(texttglsewa);
+        add(texttglsewa);
         
-        labeltglkembali = new JLabel("Tanggal kembali (mm/dd/yyyy)");
         labeltglkembali.setBounds(400, 510, 200, 30);
-        TampilanAwal.add(labeltglkembali);
-        texttglkembali = new JTextField();
+        add(labeltglkembali);
         texttglkembali.setBounds(400, 540, 200, 30);
-        TampilanAwal.add(texttglkembali);
+        add(texttglkembali);
         
-        reg = new JButton("Daftar");
         reg.setBounds(460, 580, 100, 40);
         reg.setBackground(Color.GRAY);
-        TampilanAwal.add(reg);
-        TampilanAwal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        TampilanAwal.setVisible(true);
-        TampilanAwal.setLocationRelativeTo(null);
+        add(reg);
         radioPetugas.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){ //untuk petugas
@@ -142,17 +107,17 @@ public class Sabrina07239_GUI {
             }
         });
         
-        check.addActionListener(new ActionListener(){
+        btnlogin.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){ //method
                 if(ceklogin==true){
                     try{ 
-                        Sabrina07239_Allobjctrl.admin.datapetugas(); // login untuk petugas
-                        Sabrina07239_Allobjctrl.admin.login(textidlogin.getText(), textnamalogin.getText());
-                        String nama = Sabrina07239_Allobjctrl.admin.Sabrina07239_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
+                        Sabrina07239_Allobjctrl.Petugas.datapetugas(); // login untuk petugas
+                        Sabrina07239_Allobjctrl.Petugas.login(textidlogin.getText(), textnamalogin.getText());
+                        String nama = Sabrina07239_Allobjctrl.Petugas.Sabrina07239_PetugasEntity().getnama(); //memasukkan id,nama, jika benar 
                         JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
                         Sabrina07239_PetugasGUI petugas = new Sabrina07239_PetugasGUI();
-                        TampilanAwal.dispose();
+                        dispose();
                     }catch(Exception exception){ //jika id/nama salah makan akan muncul pesan
                         JOptionPane.showMessageDialog(null, "id atau nama salah", "information", JOptionPane.INFORMATION_MESSAGE);
                         kosong();//method kosong, jika datanya kosong                    
@@ -163,7 +128,7 @@ public class Sabrina07239_GUI {
                        String nama = Sabrina07239_Allobjctrl.Pelanggan.getData().getnama(); //memasukkan id,nama, jika benar 
                        JOptionPane.showMessageDialog(null, "Selamat datang "+nama,"information", JOptionPane.INFORMATION_MESSAGE);
                        Sabrina07239_PelangganGUI  pel = new Sabrina07239_PelangganGUI();
-                       TampilanAwal.dispose();
+                       dispose();
                     }catch(Exception eception){ //jika id/nama salah makan akan muncul pesan
                         JOptionPane.showMessageDialog(null, "id atau nama salah", "information", JOptionPane.INFORMATION_MESSAGE);
                        kosong(); //method kosong, jika datanya kosong
@@ -188,6 +153,7 @@ public class Sabrina07239_GUI {
                     kosong();
                 }catch(Exception exception){
                     JOptionPane.showMessageDialog(null, "Format Penulisan Salah", "Registrasi Gagal", JOptionPane.INFORMATION_MESSAGE);
+                    kosong();
                 }
             }
         });
