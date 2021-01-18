@@ -8,7 +8,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
-public class Sabrina07239_PetugasGUI extends Sabrina07239_KomponenGUI{
+public class Sabrina07239_PetugasGUI extends JFrame{
+    Font font = new Font("Times New Roman",Font.BOLD,30);
+    JLabel admin = new JLabel("Petugas");
+    JTable tabelpelanggan = new JTable();
+    JScrollPane scrollpetugas = new JScrollPane(tabelpelanggan);
+    JLabel idlabel = new JLabel("Id");
+    JLabel namalabel = new JLabel("Nama");
+    JTextField idtext = new JTextField();
+    JTextField namatext = new JTextField();
+    JButton verif = new JButton("Verif");
+    JButton hapus = new JButton("Hapus");
+    JButton back = new JButton("Back");
     public Sabrina07239_PetugasGUI(){
         setSize(1500,700);
         setLayout(null);
@@ -50,7 +61,7 @@ public class Sabrina07239_PetugasGUI extends Sabrina07239_KomponenGUI{
         back.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae){
-                petugas.dispose();
+                dispose();
                 Sabrina07239_GUI men = new Sabrina07239_GUI();//nama objek menu
             }
         });

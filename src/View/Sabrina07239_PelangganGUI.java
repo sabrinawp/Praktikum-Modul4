@@ -8,7 +8,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
-public class Sabrina07239_PelangganGUI extends Sabrina07239_KomponenGUI{
+public class Sabrina07239_PelangganGUI extends JFrame{
+    Font font = new Font("Times New Roman",Font.BOLD,30);
+    JLabel datadiri = new JLabel("Data Pelanggan");
+    JTextArea area = new JTextArea();
+    JLabel daftarcamera = new JLabel("Daftar Camera");
+    JComboBox pilcamera = new JComboBox(Sabrina07239_CameraEntity.merk);
+    JButton daftarbtn = new JButton("Daftar");
+    JButton back = new JButton("Back");
     int cek = Sabrina07239_Allobjctrl.Pelanggan.cekDaftarPelanggan
         (Sabrina07239_Allobjctrl.Pelanggan.getData().getId());
     

@@ -1,11 +1,38 @@
 package View;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import javax.swing.*;
-public class Sabrina07239_GUI extends Sabrina07239_KomponenGUI{
+public class Sabrina07239_GUI extends JFrame{
+    Font font = new Font("Times New Roman",Font.BOLD,30);
+    JLabel judulGui = new JLabel("====RENTAL CAMERA====");
+    JLabel labellogin = new JLabel("Login");
+    JRadioButton radioPetugas = new JRadioButton("Petugas");
+    JRadioButton radiopelanggan = new JRadioButton("Pelanggan");
+    JLabel labelidlogin = new JLabel("Id");
+    JLabel labelnamalogin = new JLabel("Nama");
+    JLabel labeliddaftar = new JLabel("Id");
+    JLabel labelnamadaftar = new JLabel("Nama");
+    JLabel labelalamat = new JLabel("Alamat");
+    JLabel labelnoidentitas = new JLabel("No Identitas");
+    JLabel labelnotelp = new JLabel("No. Telepon");
+    JLabel labeltglsewa = new JLabel("Tanggal sewa (mm/dd/yyyy)");
+    JLabel labeltglkembali = new JLabel("Tanggal kembali (mm/dd/yyyy)");
+    JButton btnlogin = new JButton("Login");
+    JButton reg = new JButton("Daftar");
+    JLabel daftar = new JLabel("Daftar");
+    JTextField textidlogin = new JTextField();
+    JTextField textnamalogin = new JTextField();
+    JTextField textiddaftar = new JTextField();
+    JTextField textnamadaftar = new JTextField();
+    JTextField textalamat = new JTextField();
+    JTextField textnoidentitas = new JTextField();
+    JTextField textnotelp = new JTextField();
+    JTextField texttglsewa = new JTextField();
+    JTextField texttglkembali = new JTextField();
     private boolean ceklogin = false;
     public Sabrina07239_GUI(){ //komponen
         setSize(700, 700); //ukuran 
